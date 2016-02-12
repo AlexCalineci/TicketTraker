@@ -10,34 +10,33 @@ Simple Ticket Tracker made with Rails
 
 * Gem dependencies
 
-	 gem 'devise', '3.0.0.rc' 		 # used for user authentification 
-	 gem 'omniauth-google-oauth2' # used for google account authentification  
-	 gem 'simple_form', '1.4.1'	 # used for form submit   
-	 gem 'protected_attributes'   # protect attributes from mass-assignment in ActiveRecord models. 
-	 gem 'bootstrap-sass' 				 # bootstrap for Sass 
-	 gem 'twitter-bootstrap-rails'# twitter bootstrap for rails 
-	 gem 'hairtrigger' 					 # can be used for generating db triggers from model 
-	 gem 'tabulous' 							 # it generates tabs - not used for now - but available 
-	 gem 'will_paginate-bootstrap'# adds pagination to view 
-	 gem 'bootstrap-will_paginate'# same thing 
-	 gem 'best_in_place', github: 'bernat/best_in_place' #inline editing (javascript) 
-	 gem 'ckeditor_rails' # WYSIWYG rich text editor  - abandoned for now- it loads hard 
-	 gem 'twitter-bootstrap-rails-confirm' # modifies the usual browser confirm 
-	 gem 'groupdate' # groups the date - by month, by year, etc 
-	 gem 'font-awesome-sass-rails' # used for icons 
-	 gem "chartkick" 						  # piechart  - javascript 
-	
+	 * gem 'devise', '3.0.0.rc' 		 # used for user authentification
+	 * gem 'omniauth-google-oauth2' # used for google account authentification
+	 * gem 'simple_form', '1.4.1'	 # used for form submit
+	 * gem 'protected_attributes'   # protect attributes from mass-assignment in ActiveRecord models.
+	 * gem 'bootstrap-sass' 				 # bootstrap for Sass
+	 * gem 'twitter-bootstrap-rails'# twitter bootstrap for rails
+	 * gem 'hairtrigger' 					 # can be used for generating db triggers from model
+	 * gem 'tabulous' 							 # it generates tabs - not used for now - but available
+	 * gem 'will_paginate-bootstrap'# adds pagination to view
+	 * gem 'bootstrap-will_paginate'# same thing
+	 * gem 'best_in_place', github: 'bernat/best_in_place' #inline editing (javascript)
+	 * gem 'ckeditor_rails' # WYSIWYG rich text editor  - abandoned for now- it loads hard
+	 * gem 'twitter-bootstrap-rails-confirm' # modifies the usual browser confirm
+	 * gem 'groupdate' # groups the date - by month, by year, etc
+	 * gem 'font-awesome-sass-rails' # used for icons
+	 * gem "chartkick" 						  # piechart  - javascript
+
 * Configuration
-		 After adding the gem's to Gemfile , run  
-			 bundle install 
+		 * After adding the gem's to Gemfile , run
+			 * bundle install
 
 * Database initialization
-		 mydb the name of mysql schema
-		If u want to change it - modify database.yml according to your requirements
-		else  	
-		 rake db:schema:load # loads the defined schema into database 
+		 * mydb the name of mysql schema
+		 * If u want to change it - modify database.yml according to your requirements
+		 * else
+		 * rake db:schema:load # loads the defined schema into database
 
 * Deployment instructions
-		 run 'rails s' and see the magic 
+		 * run 'rails s' and see the magic
 * ...
-
