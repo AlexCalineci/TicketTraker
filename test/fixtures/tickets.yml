@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_reclamatie: MyString
+  data_reclamatie: MyString
+  reclamatia: MyString
+  obs: MyString
+  status: MyString
+  id_departament: 1
+  rezolvat: MyString
+  in_lucru: MyString
+  in_lucru_data: MyString
+  rezolvat_operator: MyString
+  rezolvat_data: MyString
+  prioritate: MyString
+  asignat_operator: MyString
+
+two:
+  user_reclamatie: MyString
+  data_reclamatie: MyString
+  reclamatia: MyString
+  obs: MyString
+  status: MyString
+  id_departament: 1
+  rezolvat: MyString
+  in_lucru: MyString
+  in_lucru_data: MyString
+  rezolvat_operator: MyString
+  rezolvat_data: MyString
+  prioritate: MyString
+  asignat_operator: MyString

@@ -1,0 +1,31 @@
+<% if user_signed_in? %>
+
+<div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Tickets</li>
+  			
+              <%=link_to( tickets_path ) do %>
+									  <li>Tickets.all <span class="badge"><%= count %></span></li> 
+							<%end%>
+              <div><%= link_to posted_by_path(current_user.id) do %>
+							  <li>Posted.by <span class="badge"><%=count_posted_by(current_user.id) %></span></li> 
+						  <% end %>
+							</div>
+             <%= link_to asigned_to_path(current_user.id) do %>
+							  <li>Assigned.to <span class="badge"><%=count_asig_ticket(current_user.id) %></span></li> 
+						  <% end %>
+						
+              <%= link_to resolved_by_path(current_user.id) do %>
+							  <li>Resolved.by <span class="badge"><%=count_resolved_by(current_user.id) %></span></li> 
+						  <% end %>
+
+<% if current_user.admin?%>
+              <li class="nav-header">Admin Panel</li>
+               <li><%= link_to('Departments.config' , departments_path ) %></li>
+  						<li><%= link_to('Status.config' , statuses_path ) %></li>
+							<li><%= link_to('UserDepartment.config',user_departments_users_path) %></li>
+<%end%>
+ 
+            </ul>
+</div><!--/.well -->
+<%end%>

@@ -1,0 +1,40 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+      </button>
+     <%= link_to "DroneTracker", root_path, :class => 'brand' %>					
+      <div class="container-fluid nav-collapse">
+        <ul class="nav">				
+				<% if not user_signed_in? %>
+					<li>
+					<%= link_to (content_tag(:i, "", :class=>"icon-2x icon-signout")) + "Login",new_user_session_path%>		
+					</li>
+					<li>
+					<%= link_to (content_tag(:i, "", :class=>"icon-2x icon-signout")) + "Login with Google/Sinoptix",user_omniauth_authorize_path(:google_oauth2)%>		
+					</li>
+				<%else %>
+					<li>
+					<%= link_to (content_tag(:i, "", :class=>"icon-2x icon-pencil")) + "Post.new", new_ticket_path %>
+					</li>
+					<li>
+							<%= link_to (content_tag(:i, "", :class=>"icon-2x icon-home")) + "Home",root_path%>			
+					</li>	
+					<li>
+							<%= link_to (content_tag(:i, "", :class=>"icon-2x icon-signout")) + "Logout",destroy_user_session_path,:method=>'delete'%>			
+					</li>	
+					
+        </ul>
+					
+					<p class="navbar-text pull-right">
+				      Logged in as <a href="#" class="navbar-link"><%= current_user.username%></a>
+				  </p>	
+			<% end %>
+	
+      </div><!--/.nav-collapse -->
+    </div>
+
+  </div>
+</div>
+
+

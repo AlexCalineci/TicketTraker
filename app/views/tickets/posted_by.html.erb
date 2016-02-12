@@ -1,0 +1,93 @@
+<%- model_class = Ticket -%>
+<%if @posted_tickets.exists?%>
+<div class="controls tabel">
+	<table class="table table-condensed">
+		<thead>
+		  <tr> 
+				<th><%= model_class.human_attribute_name('TicketId') %></th>
+		    <th><%= model_class.human_attribute_name('User') %></th>
+		    <th><%= model_class.human_attribute_name('PostDate') %></th>
+		    <th><%= model_class.human_attribute_name('Subject') %></th>
+		    <th><%= model_class.human_attribute_name('Comments') %></th>
+		    <th><%= model_class.human_attribute_name(:Status) %></th>
+		    <th><%= model_class.human_attribute_name('Department') %></th>
+		    <th><%= model_class.human_attribute_name('Resolved_by') %></th>
+		    <th><%= model_class.human_attribute_name(:priority) %></th>
+		    <th><%= model_class.human_attribute_name('asigned_to') %></th>
+		    <th><%= model_class.human_attribute_name(:updated_at) %></th>
+		    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <% @posted_tickets.each do |ticket| %>
+			 	<tr class = "<%= if  get_status(ticket.status) == 'New' then 'new' end -%>
+        <%= if  get_status(ticket.status) == 'Resolved' then 'resolved' end -%>
+				<%= if  get_status(ticket.status) == 'Assigned' then 'assigned' end -%>
+				<%= if  get_status(ticket.status) == 'Wp' then 'wp' end -%>
+				<%= if  get_status(ticket.status) == 'Closed' then 'closed' end -%>">
+		      <td><%= link_to ticket.id, ticket_path(ticket) %></td>
+		      <td><%= ticket.user_post %></td>
+		      <td><%= ticket.created_at.strftime("%d.%m.%Y %I:%M:%S")  %></td>
+		      <td><%= link_to truncate(ticket.subject, :length => 17) , ticket_path(ticket) %></td>
+		      <td>
+						<%= link_to get_comments_count(ticket.id) , comments_by_tickets_path(ticket.id)%>
+						<%= link_to '', comments_by_tickets_path(ticket.id),:class=>" icon-large icon-comment-alt" %>
+					</td>
+		      <td>
+						<%if ticket.status?%>
+							<%= get_status(ticket.status) %>
+						<%end%>
+			 		</td>
+		      <td>
+						<%if ticket.department_id?%>
+							<%= get_userDept(ticket.department_id).first.code %>
+					  <%end%>					
+					</td>
+		 
+		      <td>
+						<%if ticket.resolved_by_operator? %>
+							<%=get_userTicket(ticket.resolved_by_operator)%>
+						<%end%>
+					</td>
+		      <td>
+						<span class="label label-<%=if ticket.priority =='Immediate' then 'important' elsif ticket.priority == 'Low' then 'info' elsif ticket.priority == 'High' then 'success' elsif ticket.priority == 'Urgent' then 'warning' end %>"><%= ticket.priority %>
+						</span>
+					</td>
+		      <td>
+						<%if ticket.asigned_to_operator? %>
+							<%=get_userTicket(ticket.asigned_to_operator)%>
+						<%end%>
+				  </td>
+		      <td><%= ticket.updated_at.strftime("%d.%m.%Y %I:%M:%S") %></td>
+		      <td>
+		        <%= link_to '',
+		                    edit_ticket_path(ticket), :class => 'icon-large icon-edit' %>
+				
+						<%state = get_status(ticket.status)%>
+					
+					<%if state == 'New'%>		
+		        <%= link_to '',
+		                    ticket_path(ticket),
+		                    :method => :delete,
+		                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		                    :class => 'icon-large icon-trash' %>
+					<%end%>					
+		      </td>
+		    </tr>
+		  <% end %>
+		
+				
+		</tbody>
+	</table>
+
+
+</div>
+ <%else%>
+			<%flash.now[:notice]= 'Nothing posted by you!'%>
+  <%end%>
+	<div class="pagination-centered">
+		 <%= will_paginate @posted_tickets%>
+	</div>
+
+
+

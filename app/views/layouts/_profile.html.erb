@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+	<div class="btn-group">
+		<a class="btn btn-primary">
+			<i class="icon-user icon-white"></i>
+			<%= current_user.username %> 
+		</a>
+		<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu">
+		  <li><%= link_to('Edit acount', edit_user_registration_path) %></li>
+      <li><%= link_to('Logout', destroy_user_session_path, :method=>'delete') %></li>
+		</ul>
+	</div>
+<%end%>

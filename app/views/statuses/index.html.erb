@@ -1,0 +1,38 @@
+<%- model_class = Status -%>
+<div class="controls tabel">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @statuses.each do |status| %>
+      <tr>
+        <td><%= link_to status.id, status_path(status) %></td>
+        <td><%= status.code %></td>
+        <td><%= status.description %></td>
+        <td><%=l status.created_at %></td>
+        <td>
+          <%= link_to '',
+                      edit_status_path(status), :class => 'icon-large icon-edit' %>
+          <%= link_to '',
+                      status_path(status),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'icon-large icon-trash' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+	<div style="display: inline-block; padding :10px">
+		 <%= link_to 'New <i class="icon-edit icon-large"></i>'.html_safe,
+              new_status_path, :class => 'btn btn-small'  %>
+	</div>
+</div>

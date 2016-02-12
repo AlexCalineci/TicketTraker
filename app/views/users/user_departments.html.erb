@@ -1,0 +1,32 @@
+ <% @users = User.all %>
+<%- model_class = User -%>
+<div class="controls tabel">
+<table class="table table-striped">
+  <thead>
+    <tr> 
+			 <th><%= model_class.human_attribute_name('Username') %></th>
+			 <th><%= model_class.human_attribute_name('UserId') %></th>
+       <th><%= model_class.human_attribute_name('Department') %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |ud| %>
+      <tr>   
+				<td><%= ud.username %></td>
+        <td><%= ud.id %></td>
+        <td>
+					<%if ud.department_id?%>
+						<%= get_userDept(ud.department_id).first.code %>
+					<%end%>				
+				</td>
+        <td>
+          <%= link_to '',
+                      edit_user_path(ud), :class => 'icon-large icon-edit' %>
+        </td>
+      </tr
+    <% end %>
+  </tbody>
+</table>
+</div>
+

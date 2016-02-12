@@ -1,0 +1,57 @@
+<%@user = User.all %>
+<%@current_user = User.where(["id = ?",current_user.id])%>
+<div class="tabel">
+	<%= simple_form_for @ticket, :html => { :class => 'form-horizontal' }  do |f| %>
+	<div style="display: inline-block; padding :10px">	
+		<%= f.input  :user_post ,:input_html => { :value => current_user.username} ,disabled: false %></div>
+	<div style="display: inline-block"> 
+		<%= f.input  :user_id ,as: :hidden,:input_html => { :value => current_user.id,:style => 'width: 50px'},:disabled=>false%>
+	</div>
+	<div style="display: inline-block; padding :10px">	
+		<%= f.association :department , label_method: :code, value_method: :id, include_blank: false ,:input_html => { :style => 'width: 150px'}%>
+	</div>
+	<div style="display: inline-block; padding :10px">	
+		<%= f.input :subject,as: :text ,:input_html => {:style=> 'width: 300px;height: 60px'}%>
+	</div>
+	<div style="display: inline-block; padding :10px">	
+		<%= f.input  :priority ,collection: [ "Low", "High", "Urgent","Immediate"] , include_blank: false,:input_html => { :style => 'width: 150px'}%>
+	</div>
+	
+	<div style="display: inline-block; padding :10px">	
+		<%if not f.object.new_record?%>	
+		<%= f.input  :resolved_by_operator ,:collection => @current_user, :label_method => :username, :value_method => :id,:input_html => { :style => 'width: 170px'} %>
+			<%= f.input  :asigned_to_operator ,:collection => @user, :label_method => :username, :value_method => :id,:input_html => { :style => 'width: 170px'},:disabled=>false, :required => true %>
+		<%end%>
+		<%= f.input :obs,as: :text,:input_html => {:style=> 'width: 500px;height: 200px'}%>	
+	</div>
+
+	 <div class="form-actions">
+			<%= button_tag(:type => 'submit', :class => 'btn btn-small btn-primary') do %>
+					Post IT <i class="icon-thumbs-up icon-large"></i>
+			<% end %>
+		  <%= link_to 'Cancel IT <i class="icon-thumbs-down icon-large"></i>'.html_safe,
+		              tickets_path, :class => 'btn btn-small' %>
+		
+			
+			<%if not f.object.new_record?%>	
+				<div style="display: inline-block; padding :10px">	
+						<%= link_to  'Comment IT <i class="icon-comment-alt icon-large"></i>'.html_safe,
+								       new_ticket_comment_path(@ticket.id), :class => 'btn btn-small'%>
+				</div>
+			<%if not f.object.new_record? and	!@ticket.asigned_to_operator?%>	
+				<div style="display: inline-block; padding :10px">	
+				
+					<%= button_to "AutoAssign IT", ticket_path,:name=> :set_auto,:remote => true,:class=>'btn btn-small btn-info'%>
+				</div>
+				<%end%>
+			<%end%>
+			<%if not f.object.new_record? and !@ticket.resolved_by_operator? and @ticket.asigned_to_operator.to_i  == current_user.id%>	
+				<div style="display: inline-block; padding :10px">				
+					<%= button_to "Claim IT", ticket_path,:name=> :set_wp,:remote => true,:class=>'btn btn-small btn-warning'%>
+				</div>
+		<%end%>
+  	</div>
+<% end %>
+</div>
+
+

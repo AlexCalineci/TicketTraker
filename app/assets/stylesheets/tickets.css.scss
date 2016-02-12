@@ -1,0 +1,43 @@
+// Place all the styles related to the Tickets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new {
+   color: #CC3300;
+}
+
+.assigned {
+    color: #3399FF;
+}
+.resolved {
+    color: #339933;
+}
+
+.wp {
+    color: #FF9900;
+}
+
+.closed {
+    color: #669999;
+}
+
+
+.table td, .table th {
+    border: none;
+}
+
+.tabel{
+		background-color: #f5f5f5;
+    border-radius:4px;
+		border:1px solid #e3e3e3;
+
+}
+
+.tabelshow{
+		background-color: #f5f5f5;
+    border-radius:4px;
+		border:1px solid #e3e3e3;
+		
+}
+
+

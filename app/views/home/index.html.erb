@@ -1,0 +1,26 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+<% if not user_signed_in? %>
+	<h1>Attention</h1>
+	<p>To access please login! 
+			<%= link_to('Login', new_user_session_path)  %> /  
+			<%= link_to('Login with google/Sinoptix',user_omniauth_authorize_path(:google_oauth2)) %>
+	</p>
+<%end%>
+<h4>Some statistics</h4>
+<h6>Posted by chart</h6>
+
+<% @tot_post = Ticket.joins(:user).group("users.username").count %>
+<div>
+<%= pie_chart @tot_post, :id => "ticket_posted_chart" ,:height => "400px" %>
+</div>
+
+
+<div>
+<% @tot_rez = Ticket.select("resolved_by_operator, count(*)").group("resolved_by_operator") %>
+<div>
+<% pie_chart @tot_rez, :id => "ticket_resolved_chart" ,:height => "250px" %>
+</div>
+
+
+
+

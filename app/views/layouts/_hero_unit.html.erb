@@ -1,0 +1,10 @@
+<% if user_signed_in? %> 
+<div class="hero-unit">
+  <h1>Hello, world!</h1>
+    <li class="active"><%= link_to('Tickets' , tickets_path ) %></li>
+  <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+</div>
+</div><!--/row-->
+<%else%>
+	<p>Please Login</p>
+<%end%>

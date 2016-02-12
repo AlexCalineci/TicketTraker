@@ -1,0 +1,8 @@
+<%= simple_form_for @user, :html => { :class => 'simple_form form-horizontal' } do |f| %> 	
+  <%= f.association :department , label_method: :code, value_method: :id, include_blank: false%>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
+  </div>
+<% end %>

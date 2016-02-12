@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class TicketsController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/tickets_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-asigned_to">#asigned_to</a>
+    
+    <li><a href="#method-i-auto_assign">#auto_assign</a>
+    
+    <li><a href="#method-i-comments_by_tickets">#comments_by_tickets</a>
+    
+    <li><a href="#method-i-count">#count</a>
+    
+    <li><a href="#method-i-count_asig_ticket">#count_asig_ticket</a>
+    
+    <li><a href="#method-i-create">#create</a>
+    
+    <li><a href="#method-i-destroy">#destroy</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-get_status_id">#get_status_id</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-posted_by">#posted_by</a>
+    
+    <li><a href="#method-i-resolved_by">#resolved_by</a>
+    
+    <li><a href="#method-i-set_status">#set_status</a>
+    
+    <li><a href="#method-i-set_wp">#set_wp</a>
+    
+    <li><a href="#method-i-show">#show</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./SimpleForm.html">SimpleForm</a>
+  
+    <li><a href="./SimpleForm/Components.html">SimpleForm::Components</a>
+  
+    <li><a href="./SimpleForm/Components/ContainedInput.html">SimpleForm::Components::ContainedInput</a>
+  
+    <li><a href="./SimpleForm/Inputs.html">SimpleForm::Inputs</a>
+  
+    <li><a href="./SimpleForm/Inputs/Base.html">SimpleForm::Inputs::Base</a>
+  
+    <li><a href="./Admin.html">Admin</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./CommentsController.html">CommentsController</a>
+  
+    <li><a href="./CommentsHelper.html">CommentsHelper</a>
+  
+    <li><a href="./Department.html">Department</a>
+  
+    <li><a href="./DepartmentsController.html">DepartmentsController</a>
+  
+    <li><a href="./DepartmentsHelper.html">DepartmentsHelper</a>
+  
+    <li><a href="./HomeController.html">HomeController</a>
+  
+    <li><a href="./HomeHelper.html">HomeHelper</a>
+  
+    <li><a href="./OmniauthCallbacksController.html">OmniauthCallbacksController</a>
+  
+    <li><a href="./Status.html">Status</a>
+  
+    <li><a href="./StatusesController.html">StatusesController</a>
+  
+    <li><a href="./StatusesHelper.html">StatusesHelper</a>
+  
+    <li><a href="./Ticket.html">Ticket</a>
+  
+    <li><a href="./TicketsController.html">TicketsController</a>
+  
+    <li><a href="./TicketsHelper.html">TicketsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TicketsController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-asigned_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">asigned_to</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>view the tickets assigned to current user</p>
+          
+
+          
+          <div class="method-source-code" id="asigned_to-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">asigned_to</span>
+        <span class="ruby-ivar">@asig_tickets</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;asigned_to_operator= ? and length(resolved_by_operator) =0&quot;</span>,<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at desc&quot;</span>)  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- asigned_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- asigned_to-method -->
+
+    
+      <div id="method-i-auto_assign" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">auto_assign</span><span
+            class="method-args">(ticket_id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="auto_assign-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">auto_assign</span>(<span class="ruby-identifier">ticket_id</span>)
+        <span class="ruby-identifier">dept_id</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:department_id</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;id=?&quot;</span>,<span class="ruby-identifier">ticket_id</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:department_id</span>)
+        <span class="ruby-identifier">user_id</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:user_id</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;id=?&quot;</span>,<span class="ruby-identifier">ticket_id</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:user_id</span>)
+        <span class="ruby-ivar">@ids</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id</span>).<span class="ruby-identifier">where</span>(<span class="ruby-value">:department_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">dept_id</span>)      
+                <span class="ruby-ivar">@get_tickets_resolved</span>  = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">&quot;resolved_by_operator, count(*) tot_rez&quot;</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;resolved_by_operator in (?)&quot;</span>,<span class="ruby-ivar">@ids</span>]).<span class="ruby-identifier">group</span>(<span class="ruby-string">&quot;resolved_by_operator&quot;</span>)
+                        <span class="ruby-ivar">@get_tickets_resolved</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span> <span class="ruby-identifier">u</span>.<span class="ruby-identifier">tot_rez</span>}
+                        <span class="ruby-identifier">tr_max</span>  = <span class="ruby-ivar">@get_tickets_resolved</span>.<span class="ruby-identifier">first</span>
+                        <span class="ruby-identifier">tr_min</span>  = <span class="ruby-ivar">@get_tickets_resolved</span>.<span class="ruby-identifier">last</span>
+                        <span class="ruby-identifier">tr_max_id</span>  = <span class="ruby-ivar">@get_tickets_resolved</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:resolved_by_operator</span>)
+                        <span class="ruby-identifier">tr_min_id</span>  = <span class="ruby-ivar">@get_tickets_resolved</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:resolved_by_operator</span>)
+                        <span class="ruby-keyword">if</span> <span class="ruby-identifier">tr_max_id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">tr_min_id</span>
+                                <span class="ruby-identifier">get_assigned_to_tr_max_id</span> = <span class="ruby-identifier">count_asig_ticket</span>(<span class="ruby-identifier">tr_max_id</span>)
+                                <span class="ruby-identifier">get_assigned_to_tr_min_id</span> = <span class="ruby-identifier">count_asig_ticket</span>(<span class="ruby-identifier">tr_min_id</span>)   
+                                <span class="ruby-keyword">if</span> (<span class="ruby-identifier">get_assigned_to_tr_max_id</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">get_assigned_to_tr_min_id</span>)
+                                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">ticket_id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:asigned_to_operator</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">tr_max_id</span>)
+                                        <span class="ruby-comment">#tr_max_id</span>
+                                <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">get_assigned_to_tr_max_id</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">get_assigned_to_tr_min_id</span>)
+                                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">ticket_id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:asigned_to_operator</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">tr_min_id</span>)
+                                <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">get_assigned_to_tr_max_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">get_assigned_to_tr_min_id</span>)
+                                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">ticket_id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:asigned_to_operator</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">tr_max_id</span>)
+                                <span class="ruby-keyword">end</span>  
+                 <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- auto_assign-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- auto_assign-method -->
+
+    
+      <div id="method-i-comments_by_tickets" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">comments_by_tickets</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>view the ticket comments</p>
+          
+
+          
+          <div class="method-source-code" id="comments_by_tickets-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 47</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">comments_by_tickets</span>
+            <span class="ruby-ivar">@ticket_comments</span>= <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;ticket_id = ?&quot;</span>,<span class="ruby-identifier">params</span>[<span class="ruby-value">:ticket_id</span>]])
+<span class="ruby-ivar">@ticket_comments</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- comments_by_tickets-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- comments_by_tickets-method -->
+
+    
+      <div id="method-i-count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="count-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count</span>
+       <span class="ruby-ivar">@tot</span> =        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">count</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- count-method -->
+
+    
+      <div id="method-i-count_asig_ticket" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">count_asig_ticket</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>transfered from helper method</p>
+          
+
+          
+          <div class="method-source-code" id="count_asig_ticket-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count_asig_ticket</span>(<span class="ruby-identifier">id</span>)
+        <span class="ruby-ivar">@user_ticket</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;asigned_to_operator = ? and length(resolved_by_operator) =0&quot;</span>,<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- count_asig_ticket-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- count_asig_ticket-method -->
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>POST /tickets POST /tickets.json</p>
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-ivar">@ticket</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ticket_params</span>)
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ticket</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@ticket</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Ticket was successfully created.'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'show'</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:created</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@ticket</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'new'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@ticket</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
+    <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-i-destroy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destroy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>DELETE /tickets/1 DELETE /tickets/1.json</p>
+          
+
+          
+          <div class="method-source-code" id="destroy-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@ticket</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">tickets_url</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- destroy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- destroy-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /tickets/1/edit</p>
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+                      
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-get_status_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_status_id</span><span
+            class="method-args">(code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>get the status_id by code</p>
+          
+
+          
+          <div class="method-source-code" id="get_status_id-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_status_id</span>(<span class="ruby-identifier">code</span>)
+        <span class="ruby-identifier">stat</span> = <span class="ruby-constant">Status</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:id</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;code = ?&quot;</span>,<span class="ruby-identifier">code</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:id</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_status_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_status_id-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /tickets GET /tickets.json</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+      <span class="ruby-ivar">@tickets</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at desc&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /tickets/new</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@ticket</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-posted_by" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">posted_by</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>view the tickets posted by current user</p>
+          
+
+          
+          <div class="method-source-code" id="posted_by-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">posted_by</span>
+  <span class="ruby-ivar">@posted_tickets</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;user_id = ? &quot;</span>,<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at desc&quot;</span>)
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- posted_by-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- posted_by-method -->
+
+    
+      <div id="method-i-resolved_by" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolved_by</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>view the tickets resolved by current user</p>
+          
+
+          
+          <div class="method-source-code" id="resolved_by-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resolved_by</span>
+  <span class="ruby-ivar">@resolved_tickets</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;resolved_by_operator = ? &quot;</span>,<span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">paginate</span>(<span class="ruby-value">:page</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">params</span>[<span class="ruby-value">:page</span>]).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at desc&quot;</span>)
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- resolved_by-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resolved_by-method -->
+
+    
+      <div id="method-i-set_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_status</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>used in show view</p>
+          
+
+          
+          <div class="method-source-code" id="set_status-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_status</span>(<span class="ruby-identifier">id</span>)
+
+        <span class="ruby-identifier">status</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:status</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;id=?&quot;</span>,<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:status</span>)
+        
+        
+        <span class="ruby-identifier">asigned</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:asigned_to_operator</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;id= ?&quot;</span>,<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:asigned_to_operator</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">asigned</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">asigned</span>  = []
+        <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">asigned</span>
+        <span class="ruby-keyword">end</span> 
+        <span class="ruby-identifier">resolved</span> = <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">select</span>(<span class="ruby-value">:resolved_by_operator</span>).<span class="ruby-identifier">where</span>([<span class="ruby-string">&quot;id=?&quot;</span>,<span class="ruby-identifier">id</span>]).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">try</span>(<span class="ruby-value">:resolved_by_operator</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">resolved</span>.<span class="ruby-identifier">nil?</span>
+                <span class="ruby-identifier">resolved</span> = []
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-identifier">asigned</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">case</span> 
+                <span class="ruby-keyword">when</span> <span class="ruby-identifier">status</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">get_status_id</span>(<span class="ruby-string">&quot;New&quot;</span>))
+                <span class="ruby-keyword">when</span> (<span class="ruby-identifier">resolved</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">get_status_id</span>(<span class="ruby-string">&quot;Wp&quot;</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">asigned</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>)  
+                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">get_status_id</span>(<span class="ruby-string">&quot;Assigned&quot;</span>))
+                <span class="ruby-keyword">when</span> (<span class="ruby-identifier">resolved</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">asigned</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>) 
+                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;id = ?&quot;</span>,<span class="ruby-identifier">id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">get_status_id</span>(<span class="ruby-string">&quot;Resolved&quot;</span>))   
+                <span class="ruby-keyword">end</span>
+        
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_status-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_status-method -->
+
+    
+      <div id="method-i-set_wp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_wp</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>used in show view</p>
+          
+
+          
+          <div class="method-source-code" id="set_wp-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_wp</span>(<span class="ruby-identifier">id</span>) 
+        <span class="ruby-identifier">state</span> = <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:set_wp</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Claim IT&quot;</span>
+                        <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">'id= ?'</span>, <span class="ruby-identifier">id</span>).<span class="ruby-identifier">update_all</span>(<span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span><span class="ruby-identifier">get_status_id</span>(<span class="ruby-string">&quot;Wp&quot;</span>))
+                        <span class="ruby-identifier">state</span> = <span class="ruby-string">&quot;wp&quot;</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">mb_chars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+                        <span class="ruby-identifier">set_status</span>(<span class="ruby-identifier">id</span>)
+        <span class="ruby-keyword">else</span> 
+                <span class="ruby-identifier">state</span> = <span class="ruby-string">&quot;New&quot;</span>
+        <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_wp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_wp-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>GET /tickets/1 GET /tickets/1.json</p>
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+              <span class="ruby-comment">#sets the ticket wp/resolved/new/assigned status</span>
+              <span class="ruby-identifier">set_wp</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>PATCH/PUT /tickets/1 PATCH/PUT /tickets/1.json</p>
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File app/controllers/tickets_controller.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@ticket</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">ticket_params</span>)
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@ticket</span>, <span class="ruby-identifier">notice</span><span class="ruby-operator">:</span> <span class="ruby-string">'Ticket was successfully updated.'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">head</span> <span class="ruby-value">:no_content</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">action</span><span class="ruby-operator">:</span> <span class="ruby-string">'edit'</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">json</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">json</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@ticket</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">status</span><span class="ruby-operator">:</span> <span class="ruby-value">:unprocessable_entity</span> }
+    <span class="ruby-keyword">end</span>       
+                      <span class="ruby-identifier">set_wp</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])  
+                      <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:set_auto</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;AutoAssign IT&quot;</span>
+                              <span class="ruby-identifier">auto_assign</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+                      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

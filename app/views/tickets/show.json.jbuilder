@@ -1,0 +1,1 @@
+json.extract! @ticket, :user_reclamatie, :data_reclamatie, :reclamatia, :obs, :status, :id_departament, :rezolvat, :in_lucru, :in_lucru_data, :rezolvat_operator, :rezolvat_data, :prioritate, :asignat_operator, :created_at, :updated_at

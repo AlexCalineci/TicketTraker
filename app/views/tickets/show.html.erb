@@ -1,0 +1,77 @@
+<% get_ticket_comments(params[:id])%>
+<%- model_class = Ticket -%>
+<%state = get_status(@ticket.status)
+	if !state.nil?
+		state
+	else 
+		state = "New"
+end%>
+<div class="tabelshow">
+<dl  class = "<%= if  get_status(@ticket.status) == 'New' then 'new' end -%>
+        <%= if  get_status(@ticket.status) == 'Resolved' then 'resolved' end -%>
+				<%= if  get_status(@ticket.status) == 'Assigned' then 'assigned' end -%>
+				<%= if  get_status(@ticket.status) == 'Wp' then 'wp' end -%>
+				<%= if  get_status(@ticket.status) == 'Closed' then 'closed' end -%>; dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name('User Post') %>:</strong></dt>
+  <dd><%= @ticket.user_post %></dd>
+  <dt><strong><%= model_class.human_attribute_name('Post date') %>:</strong></dt>
+  <dd><%= @ticket.created_at.strftime("%d.%m.%Y %I:%M:%S") %></dd>
+  <dt><strong><%= model_class.human_attribute_name('Subject') %>:</strong></dt>
+  <dd><%= @ticket.subject %></dd>
+  <dt><strong><%= model_class.human_attribute_name('Obs') %>:</strong></dt>
+  <dd><%= simple_format(@ticket.obs) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd>
+			<%= get_ticket_status(@ticket.id) %>
+	</dd>
+	<%if @ticket.department_id?%>
+  	<dt><strong><%= model_class.human_attribute_name('Departament') %>:</strong></dt>
+  	<dd><%= get_userDept(@ticket.department_id).first.code %></dd>
+	<%end%>
+
+	<%if @ticket.resolved_by_operator?%>
+  	<dt><strong><%= model_class.human_attribute_name('Resolved by') %>:</strong></dt>
+		<dd><%= get_userTicket(@ticket.resolved_by_operator) %></dd>
+	<%end%>
+  <dt><strong><%= model_class.human_attribute_name('Priority') %>:</strong></dt>
+  <dd><%= @ticket.priority %></dd>
+  <dt><strong><%= model_class.human_attribute_name('Assigned to') %>:</strong></dt>
+ 
+	<dd>
+		<%if !@ticket.asigned_to_operator.nil?%>
+			<%= get_userTicket(@ticket.asigned_to_operator) %>
+		<%end%>
+	</dd>
+
+	<%if get_comments_count(@ticket.id) > 0 %>
+		<dt><strong><%= model_class.human_attribute_name('Comments')%>:</strong></dt>
+  
+		<% @ticket_comments.each do |comment| %>
+			 <dd><%= get_userTicket(comment.user_id)%> at: <%= comment.created_at.strftime("%d.%m.%Y %I:%M:%S")%> said: </dd>
+		  <dd><%= best_in_place comment, :text, :type => :textarea,:display_with => :simple_format %>
+			 </dd>
+		<% end %>	
+	<%end%>
+</dl>
+
+<div class="form-actions">
+  <%= link_to 'Back <i class="icon-hand-left icon-large"></i>'.html_safe,
+              tickets_path, :class => 'btn btn-small'  %>
+  <%= link_to 'Edit <i class="icon-edit icon-large"></i>'.html_safe,
+              edit_ticket_path(@ticket), :class => 'btn btn-small' %>
+	<%if !@ticket.asigned_to_operator.nil?%>
+		<%= link_to 'Comment IT <i class="icon-comment-alt icon-large"></i>'.html_safe,
+										     new_ticket_comment_path(@ticket.id), :class => 'btn btn-small'%>
+	<%end%>
+	<%if @ticket.status?%>
+		<%state = get_status(@ticket.status) %>
+	<%end%>
+	<%if state == 'New'%>		
+		<%= link_to 'Delete <i class="icon-trash icon-large"></i>'.html_safe,
+		            ticket_path(@ticket),
+		            :method => 'delete',
+		            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+		            :class => 'btn btn-small btn-danger' %>
+	<%end%>
+</div>
+</div>
